@@ -1,7 +1,23 @@
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'Admin', loadChildren: () =>
+    import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  { path: 'Admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

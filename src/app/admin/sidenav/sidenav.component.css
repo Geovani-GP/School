@@ -1,0 +1,48 @@
+.mat-toolbar-mod {
+  position: absolute;
+  z-index: 10;
+  background-color: hsl(207, 90%, 50%);
+  color: white;
+  box-shadow: 10px 6px 11px -7px rgba(0, 0, 0, 0.4) !important;
+  -webkit-box-shadow: 10px 6px 11px -7px rgba(0, 0, 0, 0.4) !important;
+  -moz-box-shadow: 10px 6px 11px -7px rgba(0, 0, 0, 0.4) !important;
+}
+
+.material-icons.orange600 {
+  color: #050504;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* .sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+} */
+
+.mat-sidenav-container {
+  height: 100%;
+  padding-top: 80px !important;
+}
+
+.mat-drawer-content {
+  padding: 10px;
+}
+/* .mat-drawer-container {
+  position: fixed;
+} */
+.mat-sidenav {
+  background-color: #cbd2d9;
+  color: #cbd2d9;
+  padding-top: 90px;
+}
+/* En Style Sidenav */
+/* Style toolbar */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  text-justify: auto;
+}

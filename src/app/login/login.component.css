@@ -1,0 +1,69 @@
+.background {
+  background-image: url('https://significado.com/img/cultura/escuela-interor-aula.jpg');
+  width: 100%;
+  height: 100%;
+
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+mat-card {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("https://significado.com/img/cultura/escuela-interor-aula.jpg");
+}
+
+mat-card img {
+  height: 250px;
+  object-fit: contain;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+}
+
+.mat-button {
+  background: #9b8658;
+  color: white;
+}
+.mat-button:hover {
+  background: orangered;
+}
+
+.main-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: block;
+  align-items: baseline;
+}
+.mat-card-actions {
+  display: grid !important;
+}

@@ -1,0 +1,43 @@
+<!-- Toolbar -->
+<mat-toolbar class="mat-toolbar-mod">
+  <button mat-icon-button class="example-icon" (click)="snav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>School</span>
+  <span class="example-spacer"></span>
+  <!--
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>share</mat-icon>
+  </button> -->
+</mat-toolbar>
+<!-- end Toolbar -->
+
+<!-- Sidenav -->
+<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 66 : 0">
+  <mat-sidenav
+    #snav
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches"
+    fixedTopGap="80"
+  >
+    <mat-nav-list>
+      <div></div>
+      <a
+        mat-list-item
+        routerLink="{{ nav.route }}"
+        *ngFor="let nav of fillerNav"
+        >{{ nav.name }}
+        <mat-icon class="material-icons orange600">{{ nav.icon }}</mat-icon>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content id="content-sidenav">
+    <router-outlet class="contenido"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- End Sidenav -->
