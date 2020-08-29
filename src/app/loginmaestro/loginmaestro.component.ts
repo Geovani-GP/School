@@ -12,11 +12,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginmaestroComponent implements OnInit {
 
   loginForm = this.fb.group({
-    email: [null, Validators.required],
-    password: [null, Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.required],
   });
-  private urlapi =
-    'https://superhouse.mx/pruebas/superHouseAdm/serviciosSuperHouse/validarIngresoWeb.php?user=';
   public currentEuroRates: any = null;
 
   constructor(
@@ -31,24 +29,21 @@ export class LoginmaestroComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   sesion() {
-    const correo = 'luis@gmail.com';
-    const pass = 'a1b2c3d4';
-    this.http
-      .get(this.urlapi + correo + '&password=' + pass)
-      .subscribe((data) => {
-        console.log('respuesta2: ' + data);
-        // tslint:disable-next-line: triple-equals
-        if (data == 198) {
-          alert('no existe');
-        } else {
-          // tslint:disable-next-line: triple-equals
-          if (data == 203) {
-            alert('no esta activado');
+    console.log(this.loginForm.valid);
+    console.log(this.loginForm.value);
+    let pass = this.loginForm.value.password;
+    let email = this.loginForm.value.email;
+    if (this.loginForm.valid) {
+      this.http.get('http://localhost/serviciosexamen/loginAlumno.php?correo='+ email +'&pass=' + pass )
+        .subscribe((res) => {
+          console.log(res);
+          if (res == 0) {
+            alert("Datos incorrectos");
           } else {
-            console.log('Se encontro el usuario');
-            this.router.navigate(['Admin']);
+            localStorage.setItem('user', JSON.stringify(res[0]));
+            this.router.navigate(['profesor/principal']);
           }
-        }
-      });
+        });
+    }
   }
 }

@@ -13,12 +13,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ProfesorRoutingModule } from './profesor-routing.module';
 import { ProfesorComponent } from './profesor.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { MateriaComponent } from './materia/materia.component';
+import { PrincipalComponent } from './principal/principal.component';
 
 
 @NgModule({
   declarations: [
     ProfesorComponent,
-    SidenavComponent
+    SidenavComponent,
+    MateriaComponent,
+    PrincipalComponent
   ],
   imports: [
     CommonModule,
