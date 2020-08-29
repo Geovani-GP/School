@@ -1,11 +1,16 @@
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginmaestroComponent } from './loginmaestro/loginmaestro.component';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'loginmaestro',
+    component: LoginmaestroComponent,
   },
   {
     path: 'Admin', loadChildren: () =>
@@ -16,7 +21,7 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-  { path: 'Admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'profesor', loadChildren: () => import('./profesor/profesor.module').then(m => m.ProfesorModule) },
 ];
 
 @NgModule({

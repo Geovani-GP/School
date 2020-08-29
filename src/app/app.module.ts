@@ -19,11 +19,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { LoginmaestroComponent } from './loginmaestro/loginmaestro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    LoginmaestroComponent
   ],
   entryComponents: [],
   imports: [

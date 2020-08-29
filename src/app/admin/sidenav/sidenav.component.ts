@@ -24,9 +24,8 @@ export class SidenavComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
   showFiller = false;
   fillerNav = [
-    { name: 'menu', route: 'principal', icon: 'home' },
-    { name: 'Alumnos', route: 'Alumnos', icon: 'people' },
-    { name: 'Materias', route: 'Materias', icon: 'menu_book' },
+    { name: 'Principal', route: 'Alumnos', icon: 'people' },
+    { name: 'Materias', route: 'Materias', icon: 'access_alarm' },
     { name: 'Horarios', route: 'Horarios', icon: 'access_alarm' },
   ];
 

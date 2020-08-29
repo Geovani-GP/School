@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alumnos.component.css']
 })
 export class AlumnosComponent implements OnInit {
-
-  constructor() { }
+  user: any;
+  constructor() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+   }
 
   ngOnInit(): void {
   }
+
+
 
 }
