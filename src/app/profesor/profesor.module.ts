@@ -15,6 +15,7 @@ import { ProfesorComponent } from './profesor.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MateriaComponent } from './materia/materia.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { HorariosComponent } from './horarios/horarios.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PrincipalComponent } from './principal/principal.component';
     ProfesorComponent,
     SidenavComponent,
     MateriaComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    HorariosComponent
   ],
   imports: [
     CommonModule,

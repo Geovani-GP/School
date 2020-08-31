@@ -25,7 +25,7 @@ export class SidenavComponent implements OnDestroy {
   fillerNav = [
     { name: 'Principal', route: 'principal', icon: 'people' },
     { name: 'Materias', route: 'Materia', icon: 'chrome_reader_mode' },
-    { name: 'Horarios', route: 'Horarios', icon: 'access_alarm' },
+    { name: 'Horarios', route: 'Horario', icon: 'access_alarm' },
   ];
 
   fillerContent = Array.from({ length: 60 }, () => 'algo');

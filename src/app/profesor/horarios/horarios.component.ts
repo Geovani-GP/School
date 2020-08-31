@@ -3,15 +3,16 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-horarios',
   templateUrl: './horarios.component.html',
   styleUrls: ['./horarios.component.css']
 })
 export class HorariosComponent implements OnInit {
+
   displayedColumns: string[] = [
     'Materia',
-    'Profesor',
     'Horario',
     'Cupo',
     'acciones'
