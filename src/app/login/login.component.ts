@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     let pass = this.loginForm.value.password;
     let email = this.loginForm.value.email;
     if (this.loginForm.valid) {
-      this.http.get('http://localhost/serviciosexamen/loginAlumno.php?correo='+ email +'&pass=' + pass )
+      this.http.get('http://localhost/serviciosexamen/loginAlumno.php?correo=' + email + '&pass=' + pass )
         .subscribe((res) => {
           if (res == 0) {
             alert("Datos incorrectos");
