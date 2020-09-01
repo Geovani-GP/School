@@ -10,23 +10,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HorariosComponent implements OnInit {
   displayedColumns: string[] = [
-    'Materia',
-    'Profesor',
-    'Horario',
-    'Cupo',
+    'horario',
+    'alumno',
+    'profesor',
+    'materia',
     'acciones'
   ];
   dataSource: any;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-
+  user: any;
   // definimos el servicio como objeto en el constructor
-  constructor(  private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('user'));
+    console.log(this.user.ID_USUARIO);
     /* llamamos el servicio para llenar la tabla */
-    this.http.get('http://localhost/serviciosexamen/materiasDisponibles.php').subscribe((data: any) => {
+    this.http.get('http://localhost/serviciosexamen/materiasalumnos.php?usuario=' + this.user.ID_USUARIO).subscribe((data: any) => {
       if (data != 0) {
         this.dataSource = new MatTableDataSource(data);
 
@@ -47,4 +49,22 @@ export class HorariosComponent implements OnInit {
     }
   }
 
+  eliminar(id) {
+    this.http.get('http://localhost/serviciosexamen/borras.php?cargaalu=' + id).subscribe((data: any) => {
+      if (data != 0) {
+
+        this.http.get('http://localhost/serviciosexamen/materiasalumnos.php?usuario=' + this.user.ID_USUARIO).subscribe((data: any) => {
+          if (data != 0) {
+            this.dataSource = new MatTableDataSource(data);
+
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+          }
+
+        });
+
+      }
+
+    });
+  }
 }

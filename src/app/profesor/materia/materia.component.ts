@@ -13,7 +13,6 @@ export class MateriaComponent implements OnInit {
 
   displayedColumns: string[] = [
     'Materia',
-    'Horario',
     'Cupo',
     'acciones'
   ];
@@ -47,5 +46,18 @@ export class MateriaComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  impartir(id) {
+    let user = JSON.parse(localStorage.getItem('user'));
+    console.log(user.ID_USUARIO);
+    // tslint:disable-next-line: max-line-length
+    this.http.get('http://localhost/serviciosexamen/cargaprofe.php?profesor=' + user.ID_USUARIO +  '&materia=' + id ).subscribe((data: any) => {
+      if (data != 0) {
+      }
+
+    });
+
+  }
+
 
 }

@@ -51,6 +51,7 @@ export class MateriasComponent implements OnInit {
   agregar(id) {
     let user = JSON.parse(localStorage.getItem('user'));
     console.log(user.ID_USUARIO);
+    // tslint:disable-next-line: max-line-length
     this.http.get('http://localhost/serviciosexamen/cargaMateriaAlumno.php?usuario='+ user.ID_USUARIO +'&cargapro=' + id).subscribe((data: any) => {
       if (data != 0) {
       }
